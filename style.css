@@ -152,8 +152,8 @@ main {
 /* Lenguajes y Tecnologías */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
     margin-top: 1rem;
     justify-items: center;
 }
@@ -161,27 +161,28 @@ main {
 .skill {
     text-align: center;
     background: #f4f4f4;
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: bounceIn 0.5s ease-in-out;
 }
 
 .skill img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 0.3rem;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
 }
 
 .skill p {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     color: #333;
 }
 
 .skill:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Proyectos */
@@ -193,18 +194,29 @@ main {
 }
 
 .project {
-    background: #f4f4f4;
-    padding: 1rem;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 300px;
     text-align: center;
+    color: #fff;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .project:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.project h3 a:hover {
+    text-decoration: underline;
 }
 
 /* Contact Links */
@@ -267,6 +279,20 @@ footer {
     }
 }
 
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -290,7 +316,7 @@ footer {
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     }
 
     .projects {
