@@ -83,6 +83,21 @@
         color: #00ffaa;
     }
 
+    /* Estilo para el logo en el menú */
+    .navbar-logo {
+        position: absolute;
+        top: 0.5rem; /* Ajusta la posición vertical */
+        left: 1rem; /* Ajusta la posición horizontal */
+        width: 40px; /* Tamaño del logo */
+        height: auto;
+        z-index: 1100; /* Asegura que esté por encima de otros elementos */
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-logo:hover {
+        transform: scale(1.1); /* Efecto de hover */
+    }
+
     /* Main Content */
     main {
         padding: 6rem 2rem 2rem; /* Ajusta el padding para compensar el menú fijo */
@@ -437,6 +452,12 @@
 
         .navbar.active ul {
             display: flex;
+        }
+
+        .navbar-logo {
+            top: 1rem; /* Ajusta la posición en pantallas pequeñas */
+            left: 0.5rem;
+            width: 35px; /* Tamaño más pequeño en móviles */
         }
     }
 
