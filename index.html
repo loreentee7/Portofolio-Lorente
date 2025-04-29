@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,80 +8,57 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png" type="image/png">
 </head>
+
 <body>
     <header>
-        <h1>🌟 Portfolio de Lorente 🌟</h1>
-        <p>Bienvenido a mi portafolio personal</p>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">👨‍💻 Sobre mí</a></li>
+                <li><a href="#skills">🛠️ Lenguajes y Tecnologías</a></li>
+                <li><a href="#projects">📂 Proyectos</a></li>
+                <li><a href="#contact">👁️ Donde Encontrarme</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">👨‍💻 Sobre mí</a></li>
-            <li><a href="#skills">🛠️ Lenguajes y Tecnologías</a></li>
-            <li><a href="#projects">📂 Proyectos</a></li>
-            <li><a href="#contact">👁️ Dónde encontrarme</a></li>
-        </ul>
-    </nav>
     <main>
+        <!-- Sección Sobre mí -->
         <section id="about" class="section fade-in">
-            <h2>👨‍💻 Sobre mí</h2>
+            <h1 class="section-title">👨‍💻 Sobre mí</h1>
             <div class="about-container">
                 <div class="about-text">
-                    <p>¡Hola! Soy <strong>Lorente</strong>, un desarrollador apasionado por la tecnología y la innovación. Desde que comencé mi viaje en el mundo de la programación, he trabajado en diversos proyectos que abarcan desde aplicaciones web hasta soluciones móviles. Mi objetivo es crear experiencias digitales que sean tanto funcionales como visualmente atractivas.</p>
-                    <p>Con una sólida base en <strong>desarrollo web</strong> y <strong>aplicaciones multiplataforma</strong>, siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades. Me encanta colaborar en equipo, resolver problemas complejos y aportar valor a través de la tecnología.</p>
+                    <p>¡Hola! Soy <strong>Lorente</strong>, un desarrollador apasionado por la tecnología y la innovación. Me encanta crear soluciones digitales que no solo sean funcionales, sino también visualmente atractivas. Con experiencia en desarrollo web y móvil, disfruto trabajando en proyectos que desafían mi creatividad y habilidades técnicas.</p>
+                    <p>Mi objetivo es seguir aprendiendo y creciendo como profesional, explorando nuevas tecnologías y colaborando en proyectos que marquen la diferencia. Cuando no estoy programando, me gusta explorar videojuegos retro y aprender sobre diseño gráfico.</p>
+                    <a href="cv.pdf" target="_blank" class="pixel-button">📄 Ver CV</a>
                 </div>
                 <div class="about-image">
                     <img src="img/foto.jpg" alt="Foto de Lorente">
                 </div>
             </div>
-            <div class="about-highlights">
-                <h3>✨ Destacados:</h3>
-                <ul>
-                    <li>✅ Más de 2 años de experiencia en desarrollo web y móvil.</li>
-                    <li>✅ Experiencia trabajando con tecnologías como <strong>JavaScript, React, Kotlin, Python</strong>, entre otras.</li>
-                    <li>✅ Colaboración en proyectos de código abierto y contribuciones en GitHub.</li>
-                    <li>✅ Habilidad para trabajar en equipo y resolver problemas complejos.</li>
-                </ul>
-            </div>
         </section>
+        <div class="diagonal-divider"></div>
+
+        <!-- Sección Lenguajes y Tecnologías -->
         <section id="skills" class="section fade-in">
-            <h2>🛠️ Lenguajes y Tecnologías</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java">
-                    <p>Java</p>
-                </div>
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
-                    <p>JavaScript</p>
-                </div>
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin">
-                    <p>Kotlin</p>
-                </div>
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#">
-                    <p>C#</p>
-                </div>
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++">
-                    <p>C++</p>
-                </div>
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React">
-                    <p>React</p>
-                </div>
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
-                    <p>Python</p>
-                </div>
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL">
-                    <p>MySQL</p>
+            <h1 class="section-title">🛠️ Lenguajes y Tecnologías</h1>
+            <div class="skills-carousel">
+                <div class="carousel-row">
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java"><p>Java</p></div>
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript"><p>JavaScript</p></div>
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin"><p>Kotlin</p></div>
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#"><p>C#</p></div>
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++"><p>C++</p></div>
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React"><p>React</p></div>
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"><p>Python</p></div>
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL"><p>MySQL</p></div>
                 </div>
             </div>
         </section>
+        <div class="diagonal-divider reverse"></div>
+
+        <!-- Sección Proyectos -->
         <section id="projects" class="section fade-in">
-            <h2>📂 Proyectos</h2>
+            <h1 class="section-title">📂 Proyectos</h1>
             <div class="projects">
                 <div class="project">
                     <h3><a href="https://github.com/loreentee7/Tarickalia" target="_blank">🎯 Tarickalia</a></h3>
@@ -96,10 +74,13 @@
                 </div>
             </div>
         </section>
+        <div class="diagonal-divider"></div>
+
+        <!-- Sección Contacto -->
         <section id="contact" class="section fade-in">
-            <h2>👁️ Dónde encontrarme</h2>
+            <h1 class="section-title">👁️ Donde Encontrarme</h1>
             <div class="contact-links">
-                <a href="https://www.linkedin.com/in/edgar-lorente/" target="_blank" class="contact-link">
+                <a href="https://www.linkedin.com/in/edgar-lorente" target="_blank" class="contact-link">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="contact-icon">
                     LinkedIn
                 </a>
@@ -119,4 +100,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
