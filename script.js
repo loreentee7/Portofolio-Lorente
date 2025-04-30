@@ -127,3 +127,14 @@ function handleScroll() {
 
 // Escuchar el evento de scroll
 window.addEventListener('scroll', handleScroll);
+
+function scrollCarousel(direction) {
+    const carousel = document.querySelector('.projects-carousel');
+    const scrollAmount = 300; // Cantidad de desplazamiento en píxeles
+
+    if (direction === 'left') {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else if (direction === 'right') {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}

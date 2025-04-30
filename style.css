@@ -100,16 +100,15 @@
 
     /* Main Content */
     main {
-        padding: 6rem 2rem 2rem; /* Ajusta el padding para compensar el menú fijo */
-        max-width: 1200px;
-        margin: 0 auto;
+        padding: 4rem 1rem; /* Ajustar el padding general */
+        max-width: 1200px; /* Limitar el ancho máximo */
+        margin: 0 auto; /* Centrar el contenido */
     }
 
     /* Secciones */
     .section {
-        padding: 2rem 1rem; /* Reducir el padding vertical */
-        min-height: auto; /* Eliminar la restricción de altura mínima */
-        margin: 1rem 0; /* Reducir el margen entre secciones */
+        padding: 2rem 1rem; /* Espaciado interno */
+        margin: 2rem 0; /* Espaciado externo */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -119,11 +118,10 @@
 
     /* Títulos de las secciones */
     .section-title {
-        font-size: 3rem; /* Títulos más grandes */
-        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
         color: #00ffaa;
         text-shadow: 0 0 10px rgba(0, 255, 170, 0.8);
-        font-family: 'Poppins', sans-serif;
         text-align: center;
     }
 
@@ -164,6 +162,7 @@
         font-size: 1rem;
         line-height: 1.8;
         color: #ddd;
+        max-width: 600px; /* Limitar el ancho del texto */
     }
 
     .about-image {
@@ -459,6 +458,27 @@
             left: 0.5rem;
             width: 35px; /* Tamaño más pequeño en móviles */
         }
+
+        .projects-carousel-container {
+            max-width: 100%; /* Asegurar que el carrusel ocupe todo el ancho */
+        }
+
+        .project {
+            flex: 0 0 200px; /* Reducir el tamaño de los proyectos en móviles */
+        }
+
+        .carousel-button {
+            font-size: 1.2rem; /* Botones más pequeños */
+            padding: 0.3rem 0.8rem;
+        }
+
+        .carousel-button.left {
+            left: -1rem; /* Ajustar posición en móviles */
+        }
+
+        .carousel-button.right {
+            right: -1rem; /* Ajustar posición en móviles */
+        }
     }
 
     @media (max-width: 480px) {
@@ -491,6 +511,27 @@
         .skill img {
             width: 40px;
             height: 40px;
+        }
+
+        .about-text {
+            font-size: 0.9rem;
+        }
+
+        .project {
+            flex: 0 0 150px; /* Proyectos más pequeños en pantallas muy pequeñas */
+        }
+
+        .carousel-button {
+            font-size: 1rem;
+            padding: 0.2rem 0.6rem;
+        }
+
+        .carousel-button.left {
+            left: -0.5rem; /* Ajustar posición en pantallas muy pequeñas */
+        }
+
+        .carousel-button.right {
+            right: -0.5rem; /* Ajustar posición en pantallas muy pequeñas */
         }
     }
 
@@ -714,4 +755,70 @@
     /* Clase para activar la animación */
     .bounce-zoom {
         animation: bounce-zoom 0.6s ease; /* Duración de la animación */
+    }
+
+    /* Contenedor del carrusel */
+    .projects-carousel-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centrar el carrusel */
+        overflow: hidden; /* Ocultar el desbordamiento horizontal */
+        width: 100%;
+        max-width: 900px; /* Limitar el ancho máximo del carrusel */
+        margin: 0 auto; /* Centrar el carrusel horizontalmente */
+    }
+
+    /* Carrusel de proyectos */
+    .projects-carousel {
+        display: flex;
+        gap: 1rem; /* Espacio entre proyectos */
+        overflow: hidden; /* Ocultar barra de desplazamiento */
+        scroll-behavior: smooth; /* Desplazamiento suave */
+        padding: 1rem 0;
+    }
+
+    /* Proyectos individuales */
+    .project {
+        flex: 0 0 250px; /* Reducir el ancho de cada proyecto */
+        background: #1e1e2f;
+        border: 2px solid #00ffaa;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 255, 170, 0.8);
+    }
+
+    /* Botones del carrusel */
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #00ffaa;
+        border: none;
+        color: #000;
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel-button.left {
+        left: 0.5rem; /* Mover hacia adentro del contenedor */
+    }
+
+    .carousel-button.right {
+        right: 0.5rem; /* Mover hacia adentro del contenedor */
+    }
+
+    .carousel-button:hover {
+        background: #00cc88;
     }
