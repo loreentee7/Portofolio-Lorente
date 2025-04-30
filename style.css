@@ -822,3 +822,85 @@
     .carousel-button:hover {
         background: #00cc88;
     }
+
+    /* Carrusel de lenguajes */
+    .skills-carousel {
+        display: flex;
+        gap: 1rem; /* Espacio entre íconos */
+        overflow-x: auto; /* Habilitar desplazamiento horizontal */
+        scroll-snap-type: x mandatory; /* Desplazamiento suave */
+        padding: 1rem 0;
+        scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
+    }
+
+    .skills-carousel::-webkit-scrollbar {
+        display: none; /* Ocultar barra de desplazamiento en Chrome, Edge y Safari */
+    }
+
+    .carousel-row {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .skill {
+        flex: 0 0 auto; /* Asegurar que los íconos no se reduzcan */
+        width: 80px; /* Ajustar tamaño para móviles */
+        text-align: center;
+    }
+
+    .skill img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 768px) {
+        .skills-carousel {
+            padding: 1rem; /* Asegurar que haya espacio en los bordes */
+        }
+
+        .skill {
+            width: 70px; /* Reducir el tamaño de los íconos */
+        }
+
+        .skill img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    /* Botón de modo oscuro */
+    .dark-mode-toggle {
+        background: #00ffaa;
+        border: none;
+        color: #000;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s ease, color 0.3s ease;
+        margin-left: 1rem;
+    }
+
+    .dark-mode-toggle:hover {
+        background: #00cc88;
+    }
+
+    /* Modo oscuro */
+    body.dark-mode {
+        background: #121212;
+        color: #e0e0e0;
+    }
+
+    body.dark-mode .navbar {
+        background: #1e1e1e;
+    }
+
+    body.dark-mode .dark-mode-toggle {
+        background: #444;
+        color: #fff;
+    }
+
+    body.dark-mode .section-title {
+        color: #00ffaa;
+    }

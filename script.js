@@ -138,3 +138,16 @@ function scrollCarousel(direction) {
         carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
 }
+
+// Alternar entre modo oscuro y claro
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Cambiar el ícono del botón
+    if (document.body.classList.contains('dark-mode')) {
+        darkModeToggle.textContent = '☀️'; // Modo claro
+    } else {
+        darkModeToggle.textContent = '🌙'; // Modo oscuro
+    }
+});
