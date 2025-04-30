@@ -470,12 +470,38 @@ footer {
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Transición más lenta */
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Estado inicial: oculto */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Comienza desplazado hacia abajo */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Transición más lenta */
+}
+
+/* Estado visible: aparece */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Se posiciona en su lugar */
+}
+
+/* Estado inicial: oculto */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Comienza desplazado hacia abajo */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Transición suave */
+}
+
+/* Estado visible: aparece */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Se posiciona en su lugar */
 }
 
 /* Media Queries */

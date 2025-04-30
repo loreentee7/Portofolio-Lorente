@@ -35,11 +35,15 @@ const sections = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // Aparecer al desplazarse hacia abajo
             entry.target.classList.add('visible');
+        } else {
+            // Desaparecer al desplazarse hacia arriba
+            entry.target.classList.remove('visible');
         }
     });
 }, {
-    threshold: 0.1
+    threshold: 0.55 // Se activa cuando el 10% del elemento es visible
 });
 
 sections.forEach(section => {
