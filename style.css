@@ -314,7 +314,7 @@ main {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
 
@@ -334,16 +334,117 @@ main {
 }
 
 .contact-icon {
-    width: 40px;
-    /* Tamaño reducido */
-    height: 40px;
-    border-radius: 5px;
+    width: 50px;
+    height: 50px;
     transition: transform 0.3s ease;
 }
 
 .contact-link:hover .contact-icon {
     transform: scale(1.1);
     /* Efecto de hover */
+}
+
+/* Sección Contacto */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Cuadro de contacto */
+.contact-box {
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    border: 2px solid #00ffaa;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 255, 170, 0.8);
+}
+
+/* Íconos */
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.contact-box:hover .contact-icon {
+    transform: scale(1.2);
+}
+
+.contact-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: #00ffaa;
+    text-shadow: 0 0 5px rgba(0, 255, 170, 0.8);
+}
+
+/* Animación de entrada */
+.contact-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.contact-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.contact-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.contact-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.contact-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Footer */
