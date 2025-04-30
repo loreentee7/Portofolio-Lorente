@@ -40,21 +40,40 @@
         <div class="diagonal-divider"></div>
 
         <!-- Sección Lenguajes y Tecnologías -->
-        <section id="skills" class="section fade-in">
-            <h1 class="section-title">🛠️ Lenguajes y Tecnologías</h1>
-            <div class="skills-carousel">
-                <div class="carousel-row">
-                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java"><p>Java</p></div>
-                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript"><p>JavaScript</p></div>
-                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin"><p>Kotlin</p></div>
-                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#"><p>C#</p></div>
-                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++"><p>C++</p></div>
-                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React"><p>React</p></div>
-                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"><p>Python</p></div>
-                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL"><p>MySQL</p></div>
-                </div>
+<section id="skills" class="section fade-in">
+    <h1 class="section-title">🛠️ Lenguajes y Tecnologías</h1>
+    <div class="skills-container">
+        <!-- Imagen del personaje -->
+        <div class="character">
+            <img src="img/avatarimage.png" alt="Personaje del juego" class="character-image" onclick="openXpWindow()">
+        </div>
+
+        <!-- Ventana estilo Windows XP -->
+        <div id="xp-window" class="xp-window hidden">
+            <div class="xp-window-header">
+                <span class="xp-window-title">Mensaje</span>
+                <button class="xp-window-close" onclick="closeXpWindow()">X</button>
             </div>
-        </section>
+            <div class="xp-window-body">
+                <p>¡Hola! Soy Lorente. Descarga mi CV aquí.</p>
+            </div>
+        </div>
+
+        <!-- Carrusel -->
+        <div class="skills-carousel">
+            <div class="carousel-row">
+                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java"><p>Java</p></div>
+                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript"><p>JavaScript</p></div>
+                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin"><p>Kotlin</p></div>
+                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#"><p>C#</p></div>
+                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++"><p>C++</p></div>
+                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React"><p>React</p></div>
+                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"><p>Python</p></div>
+                <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL"><p>MySQL</p></div>
+            </div>
+        </div>
+    </div>
+</section>
         <div class="diagonal-divider reverse"></div>
 
         <!-- Sección Proyectos -->

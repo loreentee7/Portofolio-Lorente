@@ -545,3 +545,173 @@
         color: #fff;
         cursor: pointer;
     }
+
+    /* Contenedor de la sección de habilidades */
+    .skills-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem; /* Espacio entre el personaje y el carrusel */
+    }
+
+    /* Imagen del personaje */
+    .character {
+        flex: 0 0 auto; /* Evita que el personaje cambie de tamaño */
+        text-align: center;
+    }
+
+    .character-image {
+        width: 150px; /* Ajusta el tamaño del personaje */
+        height: auto;
+        border: none; /* Asegúrate de que no haya bordes */
+        background: none; /* Elimina cualquier fondo */
+        box-shadow: none; /* Elimina sombras si las hay */
+        border-radius: 0; /* Asegúrate de que no haya bordes redondeados */
+        transition: transform 0.3s ease;
+    }
+
+    .character-image:hover {
+        transform: scale(1.1); /* Efecto de hover */
+    }
+
+    /* Carrusel */
+    .skills-carousel {
+        flex: 1; /* Ocupa el espacio restante */
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Habilitar desplazamiento horizontal */
+        scroll-snap-type: x mandatory; /* Desplazamiento suave */
+        gap: 1rem; /* Espacio entre los íconos */
+        padding: 1rem 0;
+        scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
+    }
+
+    .skills-carousel::-webkit-scrollbar {
+        display: none; /* Ocultar barra de desplazamiento en Chrome, Edge y Safari */
+    }
+
+    .carousel-row {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .skill {
+        flex: 0 0 auto; /* Asegurar que los íconos no se reduzcan */
+        width: 80px; /* Ajustar tamaño para móviles */
+        text-align: center;
+    }
+
+    .skill img {
+        width: 50px;
+        height: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .skills-container {
+            flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+            align-items: center;
+        }
+
+        .character {
+            margin-bottom: 1rem; /* Espacio entre el personaje y el carrusel */
+        }
+
+        .skills-carousel {
+            width: 100%; /* Asegurar que el carrusel ocupe todo el ancho */
+        }
+    }
+
+    /* Ventana estilo Windows XP */
+    .xp-window {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0); /* Comienza oculta y pequeña */
+        width: 300px;
+        background: #c0c0c0;
+        border: 2px solid #000;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+        font-family: 'Tahoma', sans-serif;
+        display: flex;
+        flex-direction: column;
+        opacity: 0; /* Comienza invisible */
+        transition: transform 0.5s ease, opacity 0.5s ease; /* Animación suave */
+    }
+
+    .xp-window.visible {
+        transform: translate(-50%, -50%) scale(1); /* Aparece en el centro */
+        opacity: 1; /* Se hace visible */
+    }
+
+    .xp-window.hidden {
+        display: none; /* Ocultar la ventana por defecto */
+    }
+
+    /* Ventana estilo Windows XP - Header */
+    .xp-window-header {
+        background: #000080;
+        color: #fff;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .xp-window-title {
+        font-weight: bold;
+    }
+
+    .xp-window-close {
+        background: #ff0000;
+        color: #fff;
+        border: none;
+        padding: 0 10px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .xp-window-close:hover {
+        background: #cc0000;
+    }
+
+    .xp-window-body {
+        padding: 10px;
+        font-size: 14px;
+        color: #000;
+        text-align: center;
+    }
+
+    /* Animación de rebote */
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Clase para activar la animación */
+    .bounce {
+        animation: bounce 1s ease infinite; /* Animación de rebote */
+    }
+
+    /* Animación de rebote con zoom */
+    @keyframes bounce-zoom {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2); /* Zoom in */
+        }
+    }
+
+    /* Clase para activar la animación */
+    .bounce-zoom {
+        animation: bounce-zoom 0.6s ease; /* Duración de la animación */
+    }
