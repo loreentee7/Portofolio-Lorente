@@ -139,11 +139,21 @@ function scrollCarousel(direction) {
     }
 }
 
-// Ocultar el preloader cuando la página haya cargado
+// Ocultar el preloader y mostrar la animación de apertura de la página
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
-    preloader.style.opacity = '0'; // Transición suave
+    const mainContent = document.querySelector('main'); // Selecciona el contenido principal
+
+    // Asegurar que el preloader se muestre al menos 1.5 segundos
     setTimeout(() => {
-        preloader.style.display = 'none'; // Ocultar completamente
-    }, 500); // Tiempo para la transición
+        preloader.style.opacity = '0'; // Transición suave para ocultar el preloader
+        setTimeout(() => {
+            preloader.style.display = 'none'; // Ocultar completamente el preloader
+
+            // Agregar la clase para la animación de apertura de la página
+            mainContent.classList.add('visible');
+        }, 500); // Tiempo para la transición del preloader
+    }, 900); // Retraso mínimo de 1.5 segundos
 });
+
+

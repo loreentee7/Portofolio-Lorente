@@ -1,949 +1,1087 @@
 /* General Styles */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Press+Start+2P&display=swap');
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins', sans-serif; /* Fuente moderna */
-        background: linear-gradient(135deg, #1e1e2f, #2a2a40); /* Fondo degradado */
-        color: #e0e0e0;
-        line-height: 1.6;
-        overflow-x: hidden;
-        -webkit-text-size-adjust: 100%; /* Evitar que iOS ajuste el tamaño del texto automáticamente */
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    /* Fuente moderna */
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    /* Fondo degradado */
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    /* Evitar que iOS ajuste el tamaño del texto automáticamente */
+}
 
-    html {
-        width: 100%;
-        overflow-x: hidden; /* Evitar desplazamiento horizontal en iPhone */
-        box-sizing: border-box;
-    }
+html {
+    width: 100%;
+    overflow-x: hidden;
+    /* Evitar desplazamiento horizontal en iPhone */
+    box-sizing: border-box;
+}
 
-    *,
-    *::before,
-    *::after {
-        box-sizing: inherit;
-    }
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 
-    h1, h2, h3 {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-    }
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
 
-    a {
-        text-decoration: none;
-        color: #00ffcc;
-    }
+a {
+    text-decoration: none;
+    color: #00ffcc;
+}
 
-    a:hover {
-        color: #00ffaa;
-    }
+a:hover {
+    color: #00ffaa;
+}
 
-    /* Navbar */
-    .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.6); /* Transparente */
-        backdrop-filter: blur(10px); /* Desenfoque */
-        z-index: 1000;
-        padding: 1rem 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Transparente */
+    backdrop-filter: blur(10px);
+    /* Desenfoque */
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
 
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
     .navbar ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: 0;
-        padding: 0;
-    }
-
-    @media (max-width: 768px) {
-        .navbar ul {
-            flex-direction: column;
-            gap: 1rem; /* Reducir el espacio entre los elementos del menú */
-            display: none;
-        }
-
-        .navbar.active ul {
-            display: flex;
-        }
-    }
-
-    .navbar ul li a {
-        color: #fff;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    .navbar ul li a:hover {
-        color: #00ffaa;
-    }
-
-    /* Estilo para el logo en el menú */
-    .navbar-logo {
-        position: absolute;
-        top: 0.5rem; /* Ajusta la posición vertical */
-        left: 1rem; /* Ajusta la posición horizontal */
-        width: 40px; /* Tamaño del logo */
-        height: auto;
-        z-index: 1100; /* Asegura que esté por encima de otros elementos */
-        transition: transform 0.3s ease;
-    }
-
-    .navbar-logo:hover {
-        transform: scale(1.1); /* Efecto de hover */
-    }
-
-    /* Main Content */
-    main {
-        padding: 4rem 1rem; /* Ajustar el padding general */
-        max-width: 1200px; /* Limitar el ancho máximo */
-        margin: 0 auto; /* Centrar el contenido */
-    }
-
-    /* Secciones */
-    .section {
-        padding: 2rem 1rem; /* Espaciado interno */
-        margin: 2rem 0; /* Espaciado externo */
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+        gap: 1rem;
+        /* Reducir el espacio entre los elementos del menú */
+        display: none;
     }
 
-    /* Títulos de las secciones */
-    .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: #00ffaa;
-        text-shadow: 0 0 10px rgba(0, 255, 170, 0.8);
-        text-align: center;
-    }
-
-    /* Pixel Button */
-    .pixel-button {
-        background: linear-gradient(135deg, #00ffcc, #00ffaa);
-        color: #121212;
-        font-family: 'Press Start 2P', cursive; /* Fuente estilo pixel */
-        font-size: 14px;
-        padding: 10px 20px;
-        border: 2px solid #00ffaa;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 255, 170, 0.5);
-        text-align: center;
-        display: inline-block;
-        text-decoration: none;
-    }
-
-    .pixel-button:hover {
-        background: linear-gradient(135deg, #00ffaa, #00ffcc);
-        color: #fff;
-        transform: scale(1.1);
-    }
-
-    /* About Section */
-    .about-container {
+    .navbar.active ul {
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 2rem;
-        margin-top: 1rem;
+    }
+}
+
+.navbar ul li a {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #00ffaa;
+}
+
+/* Estilo para el logo en el menú */
+.navbar-logo {
+    position: absolute;
+    top: 0.5rem;
+    /* Ajusta la posición vertical */
+    left: 1rem;
+    /* Ajusta la posición horizontal */
+    width: 40px;
+    /* Tamaño del logo */
+    height: auto;
+    z-index: 1100;
+    /* Asegura que esté por encima de otros elementos */
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1);
+    /* Efecto de hover */
+}
+
+/* Main Content */
+main {
+    padding: 4rem 1rem;
+    /* Ajustar el padding general */
+    max-width: 1200px;
+    /* Limitar el ancho máximo */
+    margin: 0 auto;
+    /* Centrar el contenido */
+}
+
+/* Secciones */
+.section {
+    padding: 2rem 1rem;
+    /* Espaciado interno */
+    margin: 2rem 0;
+    /* Espaciado externo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Títulos de las secciones */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #00ffaa;
+    text-shadow: 0 0 10px rgba(0, 255, 170, 0.8);
+    text-align: center;
+}
+
+/* Pixel Button */
+.pixel-button {
+    background: linear-gradient(135deg, #00ffcc, #00ffaa);
+    color: #121212;
+    font-family: 'Press Start 2P', cursive;
+    /* Fuente estilo pixel */
+    font-size: 14px;
+    padding: 10px 20px;
+    border: 2px solid #00ffaa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 255, 170, 0.5);
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.pixel-button:hover {
+    background: linear-gradient(135deg, #00ffaa, #00ffcc);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ddd;
+    max-width: 600px;
+    /* Limitar el ancho del texto */
+}
+
+.about-image {
+    flex: 0 0 200px;
+    text-align: center;
+    position: relative;
+}
+
+.about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Circular */
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+    /* Glow */
+    border: 4px solid #00ffaa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 170, 0.8);
+}
+
+/* Skills Carousel */
+.skills-carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.carousel-row {
+    display: flex;
+    gap: 2rem;
+    transform: translateX(100%);
+    /* Comienza fuera de la pantalla */
+    /* La animación se activará dinámicamente desde JavaScript */
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    transition: transform 0.3s ease;
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.skill p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Animación para mover los íconos al centro */
+@keyframes moveToCenter {
+    0% {
+        transform: translateX(100%);
+        /* Comienza fuera de la pantalla */
     }
 
-    .about-text {
-        flex: 1;
-        font-size: 1rem;
-        line-height: 1.8;
-        color: #ddd;
-        max-width: 600px; /* Limitar el ancho del texto */
+    100% {
+        transform: translateX(0);
+        /* Se centra */
+    }
+}
+
+/* Projects Section */
+.projects {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.project {
+    background: linear-gradient(135deg, #1e1e1e, #2a2a40);
+    border: 2px solid #00ffaa;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    /* Tamaño cuadrado */
+    height: 250px;
+    /* Tamaño cuadrado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 255, 170, 0.8);
+}
+
+.project h3 a {
+    color: #00ffaa;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    /* Fuente estilo pixel */
+}
+
+.project h3 a:hover {
+    text-decoration: underline;
+}
+
+.project p {
+    font-size: 12px;
+    color: #ddd;
+    margin-top: 0.5rem;
+}
+
+/* Contact Links */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #00ffaa;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.contact-icon {
+    width: 40px;
+    /* Tamaño reducido */
+    height: 40px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.contact-link:hover .contact-icon {
+    transform: scale(1.1);
+    /* Efecto de hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #1e1e1e;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
     }
 
     .about-image {
-        flex: 0 0 200px;
-        text-align: center;
-        position: relative;
+        margin-bottom: 1rem;
     }
 
     .about-image img {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%; /* Circular */
-        box-shadow: 0 0 20px rgba(0, 255, 170, 0.5); /* Glow */
-        border: 4px solid #00ffaa;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 150px;
+        /* Imagen más pequeña */
+        height: 150px;
     }
 
-    .about-image img:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 30px rgba(0, 255, 170, 0.8);
-    }
-
-    /* Skills Carousel */
     .skills-carousel {
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-        width: 100%;
-        padding: 2rem 0;
-        position: relative;
-    }
-
-    .carousel-row {
-        display: flex;
-        gap: 2rem;
-        transform: translateX(100%); /* Comienza fuera de la pantalla */
-        /* La animación se activará dinámicamente desde JavaScript */
-    }
-
-    .skill {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100px;
-        transition: transform 0.3s ease;
-    }
-
-    .skill img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 0.5rem;
-    }
-
-    .skill p {
-        font-size: 14px;
-        font-weight: bold;
-        color: #fff;
-    }
-
-    /* Animación para mover los íconos al centro */
-    @keyframes moveToCenter {
-        0% {
-            transform: translateX(100%); /* Comienza fuera de la pantalla */
-        }
-        100% {
-            transform: translateX(0); /* Se centra */
-        }
-    }
-
-    /* Projects Section */
-    .projects {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 2rem;
-    }
-
-    .project {
-        background: linear-gradient(135deg, #1e1e1e, #2a2a40);
-        border: 2px solid #00ffaa;
-        padding: 1rem;
-        border-radius: 10px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        width: 250px; /* Tamaño cuadrado */
-        height: 250px; /* Tamaño cuadrado */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .project:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 20px rgba(0, 255, 170, 0.8);
-    }
-
-    .project h3 a {
-        color: #00ffaa;
-        text-decoration: none;
-        font-family: 'Press Start 2P', cursive; /* Fuente estilo pixel */
-    }
-
-    .project h3 a:hover {
-        text-decoration: underline;
-    }
-
-    .project p {
-        font-size: 12px;
-        color: #ddd;
-        margin-top: 0.5rem;
-    }
-
-    /* Contact Links */
-    .contact-links {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .contact-link {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        text-decoration: none;
-        color: #00ffaa;
-        font-weight: bold;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .contact-link:hover {
-        color: #fff;
-        transform: translateY(-3px);
-    }
-
-    .contact-icon {
-        width: 40px; /* Tamaño reducido */
-        height: 40px;
-        border-radius: 5px;
-        transition: transform 0.3s ease;
-    }
-
-    .contact-link:hover .contact-icon {
-        transform: scale(1.1); /* Efecto de hover */
-    }
-
-    /* Footer */
-    footer {
-        text-align: center;
-        padding: 1rem 0;
-        background: #1e1e1e;
-        color: #fff;
-        font-size: 0.9rem;
-    }
-
-    /* Animaciones */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-        .about-container {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .about-image {
-            margin-bottom: 1rem;
-        }
-
-        .about-image img {
-            width: 150px; /* Imagen más pequeña */
-            height: 150px;
-        }
-
-        .skills-carousel {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .skill {
-            width: 80px; /* Íconos más pequeños */
-        }
-
-        .skill img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .projects {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .project {
-            width: 100%; /* Ocupa todo el ancho */
-            height: auto; /* Ajusta altura automáticamente */
-        }
-
-        .contact-links {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-link {
-            justify-content: center;
-        }
-
-        .contact-icon {
-            width: 30px; /* Íconos más pequeños */
-            height: 30px;
-        }
-
-        .pixel-button {
-            font-size: 12px;
-            padding: 8px 16px;
-        }
-
-        nav {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #000; /* Fondo oscuro para el menú */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1000;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        nav.active {
-            transform: translateX(0); /* Mostrar el menú */
-        }
-
-        nav ul {
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 5rem;
-        }
-
-        nav ul li {
-            font-size: 1.5rem;
-        }
-
-        .menu-toggle {
-            display: block;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 2rem;
-            color: #fff;
-            cursor: pointer;
-            z-index: 1100;
-        }
-
-        .navbar ul {
-            flex-direction: column;
-            gap: 1rem; /* Reducir el espacio entre los elementos del menú */
-            display: none;
-        }
-
-        .navbar.active ul {
-            display: flex;
-        }
-
-        .navbar-logo {
-            top: 1rem; /* Ajusta la posición en pantallas pequeñas */
-            left: 0.5rem;
-            width: 35px; /* Tamaño más pequeño en móviles */
-        }
-
-        .projects-carousel-container {
-            max-width: 100%; /* Asegurar que el carrusel ocupe todo el ancho */
-        }
-
-        .project {
-            flex: 0 0 200px; /* Reducir el tamaño de los proyectos en móviles */
-        }
-
-        .carousel-button {
-            font-size: 1.2rem; /* Botones más pequeños */
-            padding: 0.3rem 0.8rem;
-        }
-
-        .carousel-button.left {
-            left: -1rem; /* Ajustar posición en móviles */
-        }
-
-        .carousel-button.right {
-            right: -1rem; /* Ajustar posición en móviles */
-        }
-    }
-
-    @media (max-width: 480px) {
-        body {
-            font-size: 14px;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-        }
-        
-        .about-text p {
-            font-size: 0.9rem;
-        }
-
-        .skill img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .pixel-button {
-            font-size: 10px;
-            padding: 6px 12px;
-        }
-
-        .skill {
-            width: 60px; /* Tamaño más pequeño en pantallas muy pequeñas */
-        }
-
-        .skill img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .about-text {
-            font-size: 0.9rem;
-        }
-
-        .project {
-            flex: 0 0 150px; /* Proyectos más pequeños en pantallas muy pequeñas */
-        }
-
-        .carousel-button {
-            font-size: 1rem;
-            padding: 0.2rem 0.6rem;
-        }
-
-        .carousel-button.left {
-            left: -0.5rem; /* Ajustar posición en pantallas muy pequeñas */
-        }
-
-        .carousel-button.right {
-            right: -0.5rem; /* Ajustar posición en pantallas muy pequeñas */
-        }
-    }
-
-    /* Ajustar el carrusel para dispositivos móviles */
-    .skills-carousel {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto; /* Habilitar desplazamiento horizontal */
-        scroll-snap-type: x mandatory; /* Desplazamiento suave */
-        gap: 0.8rem; /* Reducir un poco más el espacio entre los íconos */
-        padding: 0.5rem 0; /* Reducir el padding vertical */
-        scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
-        margin: 0 0.5rem; /* Reducir margen lateral */
-        -webkit-overflow-scrolling: touch; /* Suavizar desplazamiento en iOS */
-    }
-
-    .skills-carousel::-webkit-scrollbar {
-        display: none; /* Ocultar barra de desplazamiento en Chrome, Edge y Safari */
-    }
-
-    .skill {
-        flex: 0 0 auto; /* Asegurar que los íconos no se reduzcan */
-        width: 65px; /* Ajustar tamaño para móviles */
-        text-align: center;
-    }
-
-    .skill img {
-        width: 45px;
-        height: 45px;
-    }
-
-    @media (max-width: 480px) {
-        .skills-carousel {
-            margin: 0 0.3rem; /* Reducir aún más el margen lateral en pantallas pequeñas */
-            gap: 0.5rem; /* Reducir espacio entre íconos */
-        }
-
-        .skill {
-            width: 55px; /* Tamaño más pequeño en pantallas muy pequeñas */
-        }
-
-        .skill img {
-            width: 35px;
-            height: 35px;
-        }
-    }
-
-    /* Ajustar el menú para dispositivos móviles */
-    .menu-toggle {
-        display: none;
-        font-size: 2rem;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    /* Contenedor de la sección de habilidades */
-    .skills-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 2rem; /* Espacio entre el personaje y el carrusel */
-    }
-
-    /* Imagen del personaje */
-    .character {
-        flex: 0 0 auto; /* Evita que el personaje cambie de tamaño */
-        text-align: center;
-    }
-
-    .character-image {
-        width: 150px; /* Ajusta el tamaño del personaje */
-        height: auto;
-        border: none; /* Asegúrate de que no haya bordes */
-        background: none; /* Elimina cualquier fondo */
-        box-shadow: none; /* Elimina sombras si las hay */
-        border-radius: 0; /* Asegúrate de que no haya bordes redondeados */
-        transition: transform 0.3s ease;
-    }
-
-    .character-image:hover {
-        transform: scale(1.1); /* Efecto de hover */
-    }
-
-    /* Carrusel */
-    .skills-carousel {
-        flex: 1; /* Ocupa el espacio restante */
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto; /* Habilitar desplazamiento horizontal */
-        scroll-snap-type: x mandatory; /* Desplazamiento suave */
-        gap: 1rem; /* Espacio entre los íconos */
-        padding: 1rem 0;
-        scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
-    }
-
-    .skills-carousel::-webkit-scrollbar {
-        display: none; /* Ocultar barra de desplazamiento en Chrome, Edge y Safari */
-    }
-
-    .carousel-row {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .skill {
-        flex: 0 0 auto; /* Asegurar que los íconos no se reduzcan */
-        width: 80px; /* Ajustar tamaño para móviles */
-        text-align: center;
-    }
-
-    .skill img {
-        width: 50px;
-        height: 50px;
-    }
-
-    @media (max-width: 768px) {
-        .skills-container {
-            flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-            align-items: center;
-        }
-
-        .character {
-            margin-bottom: 1rem; /* Espacio entre el personaje y el carrusel */
-        }
-
-        .skills-carousel {
-            width: 100%; /* Asegurar que el carrusel ocupe todo el ancho */
-        }
-    }
-
-    /* Ventana estilo Windows XP */
-    .xp-window {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0); /* Comienza oculta y pequeña */
-        width: 300px;
-        background: #c0c0c0;
-        border: 2px solid #000;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-        z-index: 2000;
-        font-family: 'Tahoma', sans-serif;
-        display: flex;
-        flex-direction: column;
-        opacity: 0; /* Comienza invisible */
-        transition: transform 0.5s ease, opacity 0.5s ease; /* Animación suave */
-    }
-
-    .xp-window.visible {
-        transform: translate(-50%, -50%) scale(1); /* Aparece en el centro */
-        opacity: 1; /* Se hace visible */
-    }
-
-    .xp-window.hidden {
-        display: none; /* Ocultar la ventana por defecto */
-    }
-
-    /* Ventana estilo Windows XP - Header */
-    .xp-window-header {
-        background: #000080;
-        color: #fff;
-        padding: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-    }
-
-    .xp-window-title {
-        font-weight: bold;
-    }
-
-    .xp-window-close {
-        background: #ff0000;
-        color: #fff;
-        border: none;
-        padding: 0 10px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-    .xp-window-close:hover {
-        background: #cc0000;
-    }
-
-    .xp-window-body {
-        padding: 10px;
-        font-size: 14px;
-        color: #000;
-        text-align: center;
-    }
-
-    /* Animación de rebote */
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-20px);
-        }
-        60% {
-            transform: translateY(-10px);
-        }
-    }
-
-    /* Clase para activar la animación */
-    .bounce {
-        animation: bounce 1s ease infinite; /* Animación de rebote */
-    }
-
-    /* Animación de rebote con zoom */
-    @keyframes bounce-zoom {
-        0%, 100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.2); /* Zoom in */
-        }
-    }
-
-    /* Clase para activar la animación */
-    .bounce-zoom {
-        animation: bounce-zoom 0.6s ease; /* Duración de la animación */
-    }
-
-    /* Contenedor del carrusel */
-    .projects-carousel-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center; /* Centrar el carrusel */
-        overflow: hidden; /* Ocultar el desbordamiento horizontal */
-        width: 100%;
-        max-width: 900px; /* Limitar el ancho máximo del carrusel */
-        margin: 0 auto; /* Centrar el carrusel horizontalmente */
-    }
-
-    /* Carrusel de proyectos */
-    .projects-carousel {
-        display: flex;
-        gap: 1rem; /* Espacio entre proyectos */
-        overflow: hidden; /* Ocultar barra de desplazamiento */
-        scroll-behavior: smooth; /* Desplazamiento suave */
-        padding: 1rem 0;
-    }
-
-    /* Proyectos individuales */
-    .project {
-        flex: 0 0 250px; /* Reducir el ancho de cada proyecto */
-        background: #1e1e2f;
-        border: 2px solid #00ffaa;
-        padding: 1rem;
-        border-radius: 10px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .project:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 20px rgba(0, 255, 170, 0.8);
-    }
-
-    /* Botones del carrusel */
-    .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #00ffaa;
-        border: none;
-        color: #000;
-        font-size: 1.5rem;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        z-index: 10;
-        border-radius: 5px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .carousel-button.left {
-        left: 0.5rem; /* Mover hacia adentro del contenedor */
-    }
-
-    .carousel-button.right {
-        right: 0.5rem; /* Mover hacia adentro del contenedor */
-    }
-
-    .carousel-button:hover {
-        background: #00cc88;
-    }
-
-    /* Carrusel de lenguajes */
-    .skills-carousel {
-        display: flex;
-        gap: 1rem; /* Espacio entre íconos */
-        overflow-x: auto; /* Habilitar desplazamiento horizontal */
-        scroll-snap-type: x mandatory; /* Desplazamiento suave */
-        padding: 1rem 0;
-        scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
-    }
-
-    .skills-carousel::-webkit-scrollbar {
-        display: none; /* Ocultar barra de desplazamiento en Chrome, Edge y Safari */
-    }
-
-    .carousel-row {
-        display: flex;
         gap: 1rem;
     }
 
     .skill {
-        flex: 0 0 auto; /* Asegurar que los íconos no se reduzcan */
-        width: 80px; /* Ajustar tamaño para móviles */
-        text-align: center;
+        width: 80px;
+        /* Íconos más pequeños */
     }
 
     .skill img {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 
-    /* Ajustes para dispositivos móviles */
-    @media (max-width: 768px) {
-        .skills-carousel {
-            padding: 1rem; /* Asegurar que haya espacio en los bordes */
-        }
-
-        .skill {
-            width: 70px; /* Reducir el tamaño de los íconos */
-        }
-
-        .skill img {
-            width: 40px;
-            height: 40px;
-        }
+    .projects {
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    /* Botón de modo oscuro */
-    .dark-mode-toggle {
-        background: #00ffaa;
-        border: none;
-        color: #000;
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s ease, color 0.3s ease;
-        margin-left: 1rem;
+    .project {
+        width: 100%;
+        /* Ocupa todo el ancho */
+        height: auto;
+        /* Ajusta altura automáticamente */
     }
 
-    .dark-mode-toggle:hover {
-        background: #00cc88;
+    .contact-links {
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    /* Modo oscuro */
-    body.dark-mode {
-        background: #121212;
-        color: #e0e0e0;
+    .contact-link {
+        justify-content: center;
     }
 
-    body.dark-mode .navbar {
-        background: #1e1e1e;
+    .contact-icon {
+        width: 30px;
+        /* Íconos más pequeños */
+        height: 30px;
     }
 
-    body.dark-mode .dark-mode-toggle {
-        background: #444;
-        color: #fff;
+    .pixel-button {
+        font-size: 12px;
+        padding: 8px 16px;
     }
 
-    body.dark-mode .section-title {
-        color: #00ffaa;
-    }
-
-    /* Preloader */
-    #preloader {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000;
+        /* Fondo oscuro para el menú */
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: #1e1e2f;
-        color: #fff;
-        display: flex;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav.active {
+        transform: translateX(0);
+        /* Mostrar el menú */
+    }
+
+    nav ul {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
+        gap: 1.5rem;
+        margin-top: 5rem;
     }
 
-    /* Spinner */
-    .spinner {
-        width: 50px;
-        height: 50px;
-        border: 5px solid rgba(255, 255, 255, 0.3);
-        border-top: 5px solid #00ffaa;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
+    nav ul li {
+        font-size: 1.5rem;
     }
 
-    /* Texto de carga */
-    #preloader p {
-        margin-top: 1rem;
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+        /* Reducir el espacio entre los elementos del menú */
+        display: none;
+    }
+
+    .navbar.active ul {
+        display: flex;
+    }
+
+    .navbar-logo {
+        top: 1rem;
+        /* Ajusta la posición en pantallas pequeñas */
+        left: 0.5rem;
+        width: 35px;
+        /* Tamaño más pequeño en móviles */
+    }
+
+    .projects-carousel-container {
+        max-width: 100%;
+        /* Asegurar que el carrusel ocupe todo el ancho */
+    }
+
+    .project {
+        flex: 0 0 200px;
+        /* Reducir el tamaño de los proyectos en móviles */
+    }
+
+    .carousel-button {
         font-size: 1.2rem;
-        color: #00ffaa;
+        /* Botones más pequeños */
+        padding: 0.3rem 0.8rem;
     }
 
-    /* Animación de giro */
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
+    .carousel-button.left {
+        left: -1rem;
+        /* Ajustar posición en móviles */
     }
+
+    .carousel-button.right {
+        right: -1rem;
+        /* Ajustar posición en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+
+    .skill img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .pixel-button {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .skill {
+        width: 60px;
+        /* Tamaño más pequeño en pantallas muy pequeñas */
+    }
+
+    .skill img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+    }
+
+    .project {
+        flex: 0 0 150px;
+        /* Proyectos más pequeños en pantallas muy pequeñas */
+    }
+
+    .carousel-button {
+        font-size: 1rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .carousel-button.left {
+        left: -0.5rem;
+        /* Ajustar posición en pantallas muy pequeñas */
+    }
+
+    .carousel-button.right {
+        right: -0.5rem;
+        /* Ajustar posición en pantallas muy pequeñas */
+    }
+}
+
+/* Ajustar el carrusel para dispositivos móviles */
+.skills-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    /* Habilitar desplazamiento horizontal */
+    scroll-snap-type: x mandatory;
+    /* Desplazamiento suave */
+    gap: 0.8rem;
+    /* Reducir un poco más el espacio entre los íconos */
+    padding: 0.5rem 0;
+    /* Reducir el padding vertical */
+    scrollbar-width: none;
+    /* Ocultar barra de desplazamiento en Firefox */
+    margin: 0 0.5rem;
+    /* Reducir margen lateral */
+    -webkit-overflow-scrolling: touch;
+    /* Suavizar desplazamiento en iOS */
+}
+
+.skills-carousel::-webkit-scrollbar {
+    display: none;
+    /* Ocultar barra de desplazamiento en Chrome, Edge y Safari */
+}
+
+.skill {
+    flex: 0 0 auto;
+    /* Asegurar que los íconos no se reduzcan */
+    width: 65px;
+    /* Ajustar tamaño para móviles */
+    text-align: center;
+}
+
+.skill img {
+    width: 45px;
+    height: 45px;
+}
+
+@media (max-width: 480px) {
+    .skills-carousel {
+        margin: 0 0.3rem;
+        /* Reducir aún más el margen lateral en pantallas pequeñas */
+        gap: 0.5rem;
+        /* Reducir espacio entre íconos */
+    }
+
+    .skill {
+        width: 55px;
+        /* Tamaño más pequeño en pantallas muy pequeñas */
+    }
+
+    .skill img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Ajustar el menú para dispositivos móviles */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Contenedor de la sección de habilidades */
+.skills-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    /* Espacio entre el personaje y el carrusel */
+}
+
+/* Imagen del personaje */
+.character {
+    flex: 0 0 auto;
+    /* Evita que el personaje cambie de tamaño */
+    text-align: center;
+}
+
+.character-image {
+    width: 150px;
+    /* Ajusta el tamaño del personaje */
+    height: auto;
+    border: none;
+    /* Asegúrate de que no haya bordes */
+    background: none;
+    /* Elimina cualquier fondo */
+    box-shadow: none;
+    /* Elimina sombras si las hay */
+    border-radius: 0;
+    /* Asegúrate de que no haya bordes redondeados */
+    transition: transform 0.3s ease;
+}
+
+.character-image:hover {
+    transform: scale(1.1);
+    /* Efecto de hover */
+}
+
+/* Carrusel */
+.skills-carousel {
+    flex: 1;
+    /* Ocupa el espacio restante */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    /* Habilitar desplazamiento horizontal */
+    scroll-snap-type: x mandatory;
+    /* Desplazamiento suave */
+    gap: 1rem;
+    /* Espacio entre los íconos */
+    padding: 1rem 0;
+    scrollbar-width: none;
+    /* Ocultar barra de desplazamiento en Firefox */
+}
+
+.skills-carousel::-webkit-scrollbar {
+    display: none;
+    /* Ocultar barra de desplazamiento en Chrome, Edge y Safari */
+}
+
+.carousel-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.skill {
+    flex: 0 0 auto;
+    /* Asegurar que los íconos no se reduzcan */
+    width: 80px;
+    /* Ajustar tamaño para móviles */
+    text-align: center;
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        /* Cambiar a columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .character {
+        margin-bottom: 1rem;
+        /* Espacio entre el personaje y el carrusel */
+    }
+
+    .skills-carousel {
+        width: 100%;
+        /* Asegurar que el carrusel ocupe todo el ancho */
+    }
+}
+
+/* Ventana estilo Windows XP */
+.xp-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    /* Comienza oculta y pequeña */
+    width: 300px;
+    background: #c0c0c0;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    font-family: 'Tahoma', sans-serif;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    /* Comienza invisible */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    /* Animación suave */
+}
+
+.xp-window.visible {
+    transform: translate(-50%, -50%) scale(1);
+    /* Aparece en el centro */
+    opacity: 1;
+    /* Se hace visible */
+}
+
+.xp-window.hidden {
+    display: none;
+    /* Ocultar la ventana por defecto */
+}
+
+/* Ventana estilo Windows XP - Header */
+.xp-window-header {
+    background: #000080;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.xp-window-title {
+    font-weight: bold;
+}
+
+.xp-window-close {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.xp-window-close:hover {
+    background: #cc0000;
+}
+
+.xp-window-body {
+    padding: 10px;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Clase para activar la animación */
+.bounce {
+    animation: bounce 1s ease infinite;
+    /* Animación de rebote */
+}
+
+/* Animación de rebote con zoom */
+@keyframes bounce-zoom {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+        /* Zoom in */
+    }
+}
+
+/* Clase para activar la animación */
+.bounce-zoom {
+    animation: bounce-zoom 0.6s ease;
+    /* Duración de la animación */
+}
+
+/* Contenedor del carrusel */
+.projects-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centrar el carrusel */
+    overflow: hidden;
+    /* Ocultar el desbordamiento horizontal */
+    width: 100%;
+    max-width: 900px;
+    /* Limitar el ancho máximo del carrusel */
+    margin: 0 auto;
+    /* Centrar el carrusel horizontalmente */
+}
+
+/* Carrusel de proyectos */
+.projects-carousel {
+    display: flex;
+    gap: 1rem;
+    /* Espacio entre proyectos */
+    overflow: hidden;
+    /* Ocultar barra de desplazamiento */
+    scroll-behavior: smooth;
+    /* Desplazamiento suave */
+    padding: 1rem 0;
+}
+
+/* Proyectos individuales */
+.project {
+    flex: 0 0 250px;
+    /* Reducir el ancho de cada proyecto */
+    background: #1e1e2f;
+    border: 2px solid #00ffaa;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 255, 170, 0.8);
+}
+
+/* Botones del carrusel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #00ffaa;
+    border: none;
+    color: #000;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-button.left {
+    left: 0.5rem;
+    /* Mover hacia adentro del contenedor */
+}
+
+.carousel-button.right {
+    right: 0.5rem;
+    /* Mover hacia adentro del contenedor */
+}
+
+.carousel-button:hover {
+    background: #00cc88;
+}
+
+/* Carrusel de lenguajes */
+.skills-carousel {
+    display: flex;
+    gap: 1rem;
+    /* Espacio entre íconos */
+    overflow-x: auto;
+    /* Habilitar desplazamiento horizontal */
+    scroll-snap-type: x mandatory;
+    /* Desplazamiento suave */
+    padding: 1rem 0;
+    scrollbar-width: none;
+    /* Ocultar barra de desplazamiento en Firefox */
+}
+
+.skills-carousel::-webkit-scrollbar {
+    display: none;
+    /* Ocultar barra de desplazamiento en Chrome, Edge y Safari */
+}
+
+.carousel-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.skill {
+    flex: 0 0 auto;
+    /* Asegurar que los íconos no se reduzcan */
+    width: 80px;
+    /* Ajustar tamaño para móviles */
+    text-align: center;
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .skills-carousel {
+        padding: 1rem;
+        /* Asegurar que haya espacio en los bordes */
+    }
+
+    .skill {
+        width: 70px;
+        /* Reducir el tamaño de los íconos */
+    }
+
+    .skill img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Botón de modo oscuro */
+.dark-mode-toggle {
+    background: #00ffaa;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-left: 1rem;
+}
+
+.dark-mode-toggle:hover {
+    background: #00cc88;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background: #1e1e1e;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #444;
+    color: #fff;
+}
+
+body.dark-mode .section-title {
+    color: #00ffaa;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1e1e2f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    /* Transición suave */
+}
+
+/* Spinner */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #00ffaa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Texto de carga */
+#preloader p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #00ffaa;
+}
+
+/* Animación de giro */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de apertura de la página */
+.page-open {
+    opacity: 0;
+    transform: scale(0.9); /* Comienza más pequeña */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave */
+}
+
+.page-open.visible {
+    opacity: 1;
+    transform: scale(1); /* Escala normal */
+}
