@@ -138,3 +138,12 @@ function scrollCarousel(direction) {
         carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
 }
+
+// Ocultar el preloader cuando la página haya cargado
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0'; // Transición suave
+    setTimeout(() => {
+        preloader.style.display = 'none'; // Ocultar completamente
+    }, 500); // Tiempo para la transición
+});
