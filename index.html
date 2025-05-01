@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lorente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logoweb.png" type="image/png">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav class="navbar">
+            <img src="img/logoweb.png" alt="Logo" class="navbar-logo">
+            <ul>
+                <li><a href="#about">👨‍💻 Sobre mí</a></li>
+                <li><a href="#skills">⭐ Skills</a></li>
+                <li><a href="#projects">📂 Proyectos Destacados</a></li>
+                <li><a href="#contact">👁️ Donde Encontrarme</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-open">
+        <!-- Sección Sobre mí -->
+        <section id="about" class="section fade-in">
+            <h1 class="section-title">👨‍💻 Sobre mí</h1>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>¡Hola! Soy <strong>Lorente</strong>, un desarrollador apasionado por la tecnología y la
+                        innovación. Me encanta crear soluciones digitales que no solo sean funcionales, sino también
+                        visualmente atractivas. Con experiencia en desarrollo web y móvil, disfruto trabajando en
+                        proyectos que desafían mi creatividad y habilidades técnicas.</p>
+                    <p>Mi objetivo es seguir aprendiendo y creciendo como profesional, explorando nuevas tecnologías y
+                        colaborando en proyectos que marquen la diferencia. Cuando no estoy programando, me gusta
+                        explorar videojuegos retro y aprender sobre diseño gráfico.</p>
+                    <a href="cv.pdf" target="_blank" class="pixel-button">📄 Ver CV</a>
+                </div>
+                <div class="about-image">
+                    <img src="img/foto.jpg" alt="Foto de Lorente">
+                </div>
+            </div>
+        </section>
+        <div class="diagonal-divider"></div>
+
+        <!-- Sección Lenguajes y Tecnologías -->
+        <section id="skills" class="section fade-in">
+            <h1 class="section-title">⭐ Skills</h1>
+            <div class="skills-container">
+                <!-- Imagen del personaje -->
+                <div class="character">
+                    <img src="img/avatarimage.png" alt="Personaje del juego" class="character-image"
+                        onclick="openXpWindow()">
+                </div>
+
+                <!-- Ventana estilo Windows XP -->
+                <div id="xp-window" class="xp-window hidden">
+                    <div class="xp-window-header">
+                        <span class="xp-window-title">Mensaje</span>
+                        <button class="xp-window-close" onclick="closeXpWindow()">X</button>
+                    </div>
+                    <div class="xp-window-body">
+                        <p>¡Hola! Soy Lorente. Descarga mi CV aqui</p>
+                    </div>
+                </div>
+
+                <!-- Carrusel -->
+                <div class="skills-carousel">
+                    <div class="carousel-row">
+                        <div class="skill"><img
+                                src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
+                                alt="Java">
+                            <p>Java</p>
+                        </div>
+                        <div class="skill"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                                alt="JavaScript">
+                            <p>JavaScript</p>
+                        </div>
+                        <div class="skill"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png" alt="Kotlin">
+                            <p>Kotlin</p>
+                        </div>
+                        <div class="skill"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#">
+                            <p>C#</p>
+                        </div>
+                        <div class="skill"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg"
+                                alt="C++">
+                            <p>C++</p>
+                        </div>
+                        <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                                alt="React">
+                            <p>React</p>
+                        </div>
+                        <div class="skill"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                                alt="Python">
+                            <p>Python</p>
+                        </div>
+                        <div class="skill"><img
+                                src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg"
+                                alt="MySQL">
+                            <p>MySQL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="diagonal-divider reverse"></div>
+
+        <!-- Sección Proyectos -->
+        <section id="projects" class="section fade-in">
+            <h1 class="section-title">📂 Proyectos Destacados</h1>
+            <div class="projects">
+                <div class="project">
+                    <h3><a href="https://github.com/loreentee7/Tarickalia" target="_blank">🎯 Tarickalia</a></h3>
+                    <p>Proyecto Final de DAM CFGS</p>
+                </div>
+                <div class="project">
+                    <h3><a href="https://github.com/loreentee7/Buscaminas2024" target="_blank">🕹️ Buscaminas</a></h3>
+                    <p>Buscaminas desarrollado en el CFGS de DAM.</p>
+                </div>
+                <div class="project">
+                    <h3><a href="https://github.com/loreentee7/Plantilla-de-portfailio" target="_blank">🌐 Plantilla WXP
+                            Portfolio</a></h3>
+                    <p>Portafolio desarrollado en un escritorio Windows xp</p>
+                </div>
+            </div>
+        </section>
+        <div class="diagonal-divider"></div>
+
+        <!-- Sección Contacto -->
+        <section id="contact" class="section fade-in">
+            <h1 class="section-title">👁️ Donde Encontrarme</h1>
+            <div class="contact-links">
+                <div class="contact-item">
+                    <a href="https://www.linkedin.com/in/edgar-lorente" target="_blank">
+                        <div class="contact-box">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="contact-icon">
+                            <p>LinkedIn</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/loreentee7" target="_blank">
+                        <div class="contact-box">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="contact-icon">
+                            <p>GitHub</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="mailto:elorente03@gmail.com">
+                        <div class="contact-box">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Correo" class="contact-icon">
+                            <p>Correo</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://www.instagram.com/eedgaarloreentee" target="_blank">
+                        <div class="contact-box">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="contact-icon">
+                            <p>Instagram</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Lorente. Todos los derechos reservados. 🌟</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
