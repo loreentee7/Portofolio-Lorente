@@ -35,11 +35,15 @@ const sections = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // Aparecer al desplazarse hacia abajo
             entry.target.classList.add('visible');
+        } else {
+            // Desaparecer al desplazarse hacia arriba
+            entry.target.classList.remove('visible');
         }
     });
 }, {
-    threshold: 0.1
+    threshold: 0.55 // Se activa cuando el 10% del elemento es visible
 });
 
 sections.forEach(section => {
@@ -65,3 +69,95 @@ function toggleMenu() {
     const nav = document.querySelector('nav');
     nav.classList.toggle('active');
 }
+
+// Abrir la ventana estilo Windows XP con animación
+function openXpWindow() {
+    const xpWindow = document.getElementById('xp-window');
+    const character = document.querySelector('.character-image');
+
+    // Obtener la posición del personaje
+    const rect = character.getBoundingClientRect();
+
+    // Configurar la posición inicial de la ventana (en la posición del personaje)
+    xpWindow.style.top = `${rect.top + rect.height / 2}px`;
+    xpWindow.style.left = `${rect.left + rect.width / 2}px`;
+    xpWindow.style.transform = `translate(-50%, -50%) scale(0)`;
+    xpWindow.style.opacity = '0';
+
+    // Forzar un reflujo para que la animación funcione
+    void xpWindow.offsetWidth;
+
+    // Animar la ventana hacia el centro
+    xpWindow.style.top = '50%';
+    xpWindow.style.left = '50%';
+    xpWindow.classList.remove('hidden');
+    xpWindow.classList.add('visible');
+}
+
+// Cerrar la ventana estilo Windows XP
+function closeXpWindow() {
+    const xpWindow = document.getElementById('xp-window');
+    xpWindow.classList.remove('visible');
+
+    // Opcional: Ocultar la ventana después de la animación
+    setTimeout(() => {
+        xpWindow.classList.add('hidden');
+    }, 500); // Tiempo igual al de la animación
+}
+
+// Detectar si el personaje está en el área visible
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Agregar la animación de rebote al personaje una sola vez
+function handleScroll() {
+    const character = document.querySelector('.character-image');
+    if (isElementInViewport(character) && !character.classList.contains('animated')) {
+        character.classList.add('bounce-zoom', 'animated'); // Agregar animación y marcar como animado
+
+        // Eliminar la clase de animación después de que termine
+        character.addEventListener('animationend', () => {
+            character.classList.remove('bounce-zoom');
+        }, { once: true }); // Escuchar solo una vez
+    }
+}
+
+// Escuchar el evento de scroll
+window.addEventListener('scroll', handleScroll);
+
+function scrollCarousel(direction) {
+    const carousel = document.querySelector('.projects-carousel');
+    const scrollAmount = 300; // Cantidad de desplazamiento en píxeles
+
+    if (direction === 'left') {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else if (direction === 'right') {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
+
+// Ocultar el preloader y mostrar la animación de apertura de la página
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const mainContent = document.querySelector('main'); // Selecciona el contenido principal
+
+    // Asegurar que el preloader se muestre al menos 1.5 segundos
+    setTimeout(() => {
+        preloader.style.opacity = '0'; // Transición suave para ocultar el preloader
+        setTimeout(() => {
+            preloader.style.display = 'none'; // Ocultar completamente el preloader
+
+            // Agregar la clase para la animación de apertura de la página
+            mainContent.classList.add('visible');
+        }, 500); // Tiempo para la transición del preloader
+    }, 900); // Retraso mínimo de 1.5 segundos
+});
+
+
