@@ -270,23 +270,71 @@ main {
 }
 
 .project {
-    background: linear-gradient(135deg, #1e1e1e, #2a2a40);
-    border: 2px solid #00ffaa;
+    position: relative;
     padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    background: #1e1e2f;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 250px;
-    /* Tamaño cuadrado */
-    height: 250px;
-    /* Tamaño cuadrado */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-languages {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project:hover .project-languages {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-languages span {
+    background: #00ffaa;
+    color: #1e1e2f;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.project-languages {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.project-languages li {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    background: #1e1e2f;
+    color: #00ffaa;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.project-languages img {
+    width: 16px;
+    height: 16px;
+}
 
 .project:hover {
     transform: translateY(-5px);
