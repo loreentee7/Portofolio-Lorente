@@ -134,7 +134,7 @@
                 <div class="project">
                     <h3><a href="https://github.com/loreentee7/Tarickalia" target="_blank">🎯 Tarickalia</a></h3>
                     <p>Proyecto Final de DAM CFGS</p>
-                    <p class="project-languages"><span>Java</span><span>C#</span><span>SQL</span></p>
+                    <p class="project-languages"><span>Java</span><span>C#</span><span>SQL</span><span>Kotlin</span></p>
                 </div>
                 <div class="project">
                     <h3><a href="https://github.com/loreentee7/PiMediaManager" target="_blank">📂 PiMediaMngr</a></h3>
@@ -147,7 +147,10 @@
                     <p>Portafolio desarrollado en un escritorio Windows XP.</p>
                     <p class="project-languages"><span>HTML</span><span>CSS</span><span>JavaScript</span></p>
                 </div>
-                <div class="project">
+                <div class="project"
+                data-gif="img/gifs/pokkedle.gif" 
+                data-title="Pokkedle"
+                onclick="openProjectModal(this)">
                     <h3><a href="https://github.com/loreentee7/Pokkedle" target="_blank">🎮 Pokkedle
                             </a></h3>
                     <p>Juego interactivo de pokemon.</p>
@@ -226,6 +229,14 @@
                 </div>
             </div>
         </section>
+        <!-- Modal para mostrar el GIF del proyecto -->
+        <div id="project-modal" class="modal hidden">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <img id="modal-gif" src="" alt="Demo del proyecto" tabindex="0" />
+                <h3 id="modal-title"></h3>
+            </div>
+        </div>
     </main>
     <footer>
         <p>&copy; 2025 Lorente. Todos los derechos reservados. 🌟</p>

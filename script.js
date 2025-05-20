@@ -160,4 +160,36 @@ window.addEventListener('load', () => {
     }, 900); // Retraso mínimo de 1.5 segundos
 });
 
+function openProjectModal(projectDiv) {
+    const gif = projectDiv.getAttribute('data-gif');
+    const title = projectDiv.getAttribute('data-title');
+    const modal = document.getElementById('project-modal');
+    const modalGif = document.getElementById('modal-gif');
+    const modalTitle = document.getElementById('modal-title');
+    modalGif.src = gif;
+    modalTitle.textContent = title;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+
+    // Espera a que el modal esté visible y enfoca el GIF
+    setTimeout(() => {
+        modalGif.scrollIntoView({ behavior: "smooth", block: "center" });
+        modalGif.focus();
+    }, 100);
+}
+
+document.getElementById('close-modal').onclick = function() {
+    document.getElementById('project-modal').classList.add('hidden');
+    document.getElementById('modal-gif').src = '';
+    document.body.style.overflow = '';
+};
+
+document.getElementById('project-modal').onclick = function(e) {
+    if (e.target === this) {
+        this.classList.add('hidden');
+        document.getElementById('modal-gif').src = '';
+        document.body.style.overflow = '';
+    }
+};
+
 
